@@ -4,7 +4,7 @@
 <table>
     <thead>
     <tr>
-<td>id</td><td>user_id</td><td>event_id</td><td>barcode_order</td><td><created>
+<td>id</td><td>user_id</td><td>event_id</td><td>barcode_order</td><td>created</td>
      </tr>
        </thead> 
         <tbody>
