@@ -50,7 +50,7 @@ cr:
                 ->get();
     $usedBarcode =  $usedBarcode->toArray();
     do {
-    $barcode = rand();
+    $barcode = rand(100,getrandmax()).rand(100,getrandmax());
 } while (in_array($barcode,$usedBarcode,true));
 $createBarcode = new used_barcode;
 // $user_id = auth()->id;
@@ -116,6 +116,6 @@ if (Strings\contains($response, 'error')) {
       $order->equal_price = $req->ticket_adult_price * $req->ticket_adult_quantity + $req->ticket_kid_price * $req->ticket_kid_quantity;
       $order->save();
 
-      return 'order successfully aproved';
+      return [ "message" => 'order successfully approved'];
     }
 }
