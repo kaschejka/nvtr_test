@@ -1,64 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h1>Задание №2</h1>
+<lable>Таблица order</lable>
+<table>
+    <thead>
+    <tr>
+<td>id</td><td>user_id</td><td>event_id</td><td>barcode_order</td><td>created</td>
+     </tr>
+       </thead> 
+        <tbody>
+<tr><td>1</td><td>5</td><td>9</td><td>45678979</td><td>2021-01-11 13:22:09</td></tr>
+<tr><td>2</td><td>8</td><td>9</td><td>45888979</td><td>2021-01-12 11:22:09</td></tr>
+         </tbody>   
+</table>
+<lable>Таблица ticket</lable>
+<table>
+    <thead>
+    <tr>
+<td>order_id</td><td>type_ticket</td><td>barcode_ticket</td><td>price</td>
+     </tr>
+       </thead> 
+        <tbody>
+<tr><td>1</td><td>2</td><td>7888878987</td><td>500</td></tr>
+<tr><td>1</td><td>1</td><td>7888878944</td><td>1000</td></tr>
+<tr><td>2</td><td>4</td><td>7844878944</td><td>300</td></tr>            
+         </tbody>   
+</table>
+<lable>Таблица type_ticket</lable>
+<table>
+    <thead>
+    <tr>
+<td>id</td><td>name</td>
+     </tr>
+       </thead> 
+        <tbody>
+<tr><td>1</td><td>Взрослый</td></tr>
+<tr><td>2</td><td>Детский</td></tr>
+<tr><td>3</td><td>Групповой</td></tr>
+<tr><td>4</td><td>ЛЬготный</td></tr>            
+         </tbody>   
+</table>
+<lable>Таблица event_ticket_price</lable>
+<table>
+    <thead>
+    <tr>
+<td>event_id</td><td>type_ticket</td><td>price</td>
+     </tr>
+       </thead> 
+        <tbody>
+<tr><td>9</td><td>1</td><td>1000</td></tr>
+<tr><td>9</td><td>2</td><td>500</td></tr>
+<tr><td>9</td><td>3</td><td>1500</td></tr>
+<tr><td>9</td><td>4</td><td>300</td></tr>            
+         </tbody>   
+</table>
+<br>
+Разбиением первоначальной таблицы order на две (таблицу order и ticket), мы решаем сразу несколько проблем:
+<br>
+- избыточность данных в таблице оrder. Сохранялось количество билетов взрослых, детских, итоговая стоимость. Это лишняя информация, которую можно получить через sql запрос из двух таблиц.
+<br>
+- невозможность учитывать дополнительные типы билетов. Строго привязка к взрослым и детским билетам
+- <br>
+- Один баркод на один заказ. Это является некорректным, т.к. часто посетители из одного заказа приходят не одновременно на события. Возникает необходимость проверять их билеты по отдельности. 
+<br>
+<h1>Задание №3</h1>
+---------------------------
+<br>
+<b><i>addOrder</b></i> - добавляет заказы в таблицу заказов Order
+<br>
+Function addOrder (integer $event_id, string $event_date, integer $ticket_adult_price, integer $ticket_adult_quantity, integer $ticket_kid_price, integer $ticket_kid_quantity): array
+<br>
+ - Все входные параметры обязательны.
+<br>
+ - Возвращает массив. В случае неудачного оформления заказа возращает один из следующих массивов - {error: 'event cancelled'}, {error: 'no tickets'}, {error: 'no seats'}, {error: 'fan removed'}. В случае успеха - {message: 'order successfully aproved'}
+ <br>
+ ---------------------------
+ <br>
+ <b><i>createBarcode</b></i> - генерирует уникальный barcode для заказа
+ <br>
+ function createBarcode(): integer
+ <br>
+ Вызывается без параметров
+ <br>
+ - Возвращает уникальный barcode для заказа. Возращаемый тип данные Integer
+ <br>
+---------------------------
+ <br>
+<b><i> book </i></b> - проверяет успешность брони заказа.
+ <br>
+ function book(integer $event_id, string $event_date, integer $ticket_adult_price, integer $ticket_adult_quantity, integer $ticket_kid_price, integer $ticket_kid_quantity, integer $barcode):bool
+ <br>
+  - Все входные параметры обязательны
+ <br>
+  - Возращает true в случае успешной брони и false в противном.
