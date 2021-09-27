@@ -86,7 +86,7 @@ Function addOrder (integer $event_id, string $event_date, integer $ticket_adult_
  <br>
 <b><i> book </i></b> - проверяет успешность брони заказа.
  <br>
- function book(integer $event_id, integer $event_date, integer $ticket_adult_price, integer $ticket_adult_quantity, integer $ticket_kid_price, integer $ticket_kid_quantity, integer $barcode):bool
+ function book(integer $event_id, string $event_date, integer $ticket_adult_price, integer $ticket_adult_quantity, integer $ticket_kid_price, integer $ticket_kid_quantity, integer $barcode):bool
  <br>
   - Все входные параметры обязательны
  <br>
