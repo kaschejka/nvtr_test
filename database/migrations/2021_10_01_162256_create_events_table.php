@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsedBarcodesTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateUsedBarcodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('used_barcodes', function (Blueprint $table) {
-          $table->string('barcode',120);
-          $table->timestamps();
+        Schema::create('events', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->date('event_date');
         });
     }
 
@@ -26,6 +27,6 @@ class CreateUsedBarcodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('used_barcodes');
+        Schema::dropIfExists('events');
     }
 }

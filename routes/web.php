@@ -21,3 +21,7 @@ Route::get('/', function () {
 
 
 Route::post('/order', [createOrderController::class,'addOrder']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
