@@ -16,6 +16,7 @@ class CreateEventTicketsTable extends Migration
         Schema::create('event_tickets', function (Blueprint $table) {
             $table->id();
             $table->string('price_ticket');
+            $table->timestamps();
         });
     }
 

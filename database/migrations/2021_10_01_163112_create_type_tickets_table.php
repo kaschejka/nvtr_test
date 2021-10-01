@@ -15,7 +15,8 @@ class CreateTypeTicketsTable extends Migration
     {
         Schema::create('type_tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('type_ticket');
+            $table->string('type_ticket')->unique();
+            $table->timestamps();
         });
     }
 
