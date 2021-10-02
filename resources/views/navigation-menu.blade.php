@@ -16,6 +16,17 @@
                         {{ __('События') }}
                     </x-jet-nav-link>
                 </div>
+                @Auth
+                @else
+                <x-jet-nav-link href="{{ route('login') }}" :active="request()->routeIs('Login')">
+                    {{ __('Войти') }}
+                </x-jet-nav-link>
+                <x-jet-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                    {{ __('Зарегистрироваться') }}
+                </x-jet-nav-link>
+            </div>
+            @endauth
+                @auth
                 @if (auth()->user()->role == 'admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                   <x-jet-nav-link href="type_tickets" :active="request()->routeIs('type_tickets')">
@@ -23,6 +34,7 @@
                   </x-jet-nav-link>
               </div>
                 @endif
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -219,6 +231,7 @@
                     @endforeach
                 @endif
             </div>
+            @endauth
         </div>
     </div>
 </nav>

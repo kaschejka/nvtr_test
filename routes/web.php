@@ -21,12 +21,12 @@ use App\Http\Controllers\type_ticketsController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('events', eventController::class);
+Route::resource('events', eventController::class);
 Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('event_tikets', event_ticketsController::class);
 Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('type_tickets', type_ticketsController::class);
 
 Route::post('/order', [createOrderController::class,'addOrder']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboard', function () {
+    return redirect()->route('events.index');
 })->name('dashboard');
