@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\event;
+use App\Models\event_ticket;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -58,7 +59,9 @@ class eventController extends Controller
      */
     public function show(event $event)
     {
-        return view('events\show',compact('event'));
+//       $po = event_ticket::with('type_ticket')->get();
+// echo dd($po);
+       return view('events\show',compact('event'));
     }
 
     /**

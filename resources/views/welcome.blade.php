@@ -21,48 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-      <br>
-      <form  action="/order" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group" hidden>
-          <label for="event_id">Дата события</label>
-          <input type="text" name="event_id"  id="event_id" class="form-control" value="8">
-      </div>
-        <div class="form-group">
-          <label for="event_date1">Дата события</label>
-          <input type="text" name="event_date1"  id="event_date1" class="form-control" value="2021-08-21 13:00:00" disabled>
-      </div>
-      <div class="form-group" hidden>
-        <label for="event_date">Дата события</label>
-        <input type="text" name="event_date"  id="event_date" class="form-control" value="2021-08-21 13:00:00" >
-    </div>
-      <div class="form-group">
-        <label for="ticket_adult_price1">Стоимость взрослого билета</label>
-        <input type="text" name="ticket_adult_price1"  id="ticket_adult_price1" class="form-control" value="700" disabled>
-    </div>
-    <div class="form-group" hidden>
-      <label for="ticket_adult_price">Стоимость взрослого билета</label>
-      <input type="text" name="ticket_adult_price"  id="ticket_adult_price" class="form-control" value="700">
-  </div>
-    <div class="form-group">
-      <label for="ticket_adult_quantity">Количество взрослых</label>
-      <input type="text" name="ticket_adult_quantity"  id="ticket_adult_quantity" class="form-control" value="0" required>
-  </div>
-  <div class="form-group">
-    <label for="ticket_kid_price1">Стоимость детского билета</label>
-    <input type="text" name="ticket_kid_price1"  id="ticket_kid_price1" class="form-control" value="300" disabled>
-</div>
-<div class="form-group" hidden>
-  <label for="ticket_kid_price">Стоимость детского билета</label>
-  <input type="text" name="ticket_kid_price"  id="ticket_kid_price" class="form-control" value="300">
-</div>
-<div class="form-group">
-  <label for="ticket_kid_quantity">Количество детей</label>
-  <input type="text" name="ticket_kid_quantity"  id="ticket_kid_quantity" class="form-control" value="0" required>
-</div>
-          <div class="form-group">
-          <button type="submit" class="btn btn-success">Забронировать</button>
-        </div>
-      </form>
+
     </body>
 </html>

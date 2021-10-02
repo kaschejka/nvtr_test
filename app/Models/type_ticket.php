@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class type_ticket extends Model
 {
   protected $table = 'type_tickets';
-  protected $fillable = [
-      'type_ticket'
-  ];
+  public function event_tikets()
+  {
+
+              return $this->hasMany(event_ticket::class);
+  }
 
 }
