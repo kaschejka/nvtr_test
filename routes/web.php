@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\createOrderController;
 use App\Http\Controllers\eventController;
 use App\Http\Controllers\event_ticketsController;
 use App\Http\Controllers\type_ticketsController;
@@ -25,7 +24,6 @@ Route::resource('events', eventController::class);
 Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('event_tikets', event_ticketsController::class);
 Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('type_tickets', type_ticketsController::class);
 
-Route::post('/order', [createOrderController::class,'addOrder']);
 
 Route::get('/dashboard', function () {
     return redirect()->route('events.index');

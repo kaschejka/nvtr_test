@@ -21,6 +21,7 @@
                                     <div class="form-group">
                                         <strong>Наименование события:</strong>
                                         {{ $event->name }}
+
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -57,3 +58,30 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+document.getElementById("submit").addEventListener('click', function() {
+  var event_id = <?php echo json_encode($event->id, JSON_HEX_TAG); ?>;
+  var url = <?php echo json_encode(env('Local_URL')."/api/order", JSON_HEX_TAG); ?>;
+  var user_id = <?php echo json_encode(auth()->user()->id, JSON_HEX_TAG); ?>;
+  let ticket = {};
+  var vticket = document.querySelectorAll('input[type="text"]');
+  for(let i = 0; i < vticket.length; i++){
+    if (vticket[i].value != 0) {
+      ticket[vticket[i].id] =  vticket[i].value;
+    };
+  }
+  axios({
+method: 'post',
+url: url,
+data: {
+  user_id: user_id,
+  event_id: event_id,
+  ticket: ticket
+}
+})
+.then(function (response) {
+
+console.log(response.data);
+})
+})
+</script>

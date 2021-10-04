@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\siteController;
+use App\Http\Controllers\createOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/book', [siteController::class,'book']);
 Route::post('/approve', [siteController::class,'approve']);
+Route::post('/order', [createOrderController::class,'addOrder']);
