@@ -20,11 +20,9 @@ use App\Http\Controllers\type_ticketsController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('events', eventController::class);
+Route::middleware('event')->resource('events', eventController::class);
 Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('event_tikets', event_ticketsController::class);
 Route::middleware(['auth:sanctum', 'verified','role:admin'])->resource('type_tickets', type_ticketsController::class);
-
-
 Route::get('/dashboard', function () {
     return redirect()->route('events.index');
 })->name('dashboard');

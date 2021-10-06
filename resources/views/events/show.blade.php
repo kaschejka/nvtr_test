@@ -15,7 +15,6 @@
                             <a class="btn btn-primary" href="{{ route('events.index') }}"> Назад</a>
                         </div>
 
-
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
@@ -58,6 +57,7 @@
         </div>
     </div>
 </x-app-layout>
+@auth
 <script>
 document.getElementById("submit").addEventListener('click', function() {
   var event_id = <?php echo json_encode($event->id, JSON_HEX_TAG); ?>;
@@ -85,3 +85,4 @@ console.log(response.data);
 })
 })
 </script>
+@endauth

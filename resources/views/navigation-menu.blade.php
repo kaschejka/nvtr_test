@@ -29,7 +29,7 @@
                 @auth
                 @if (auth()->user()->role == 'admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                  <x-jet-nav-link href="type_tickets" :active="request()->routeIs('type_tickets')">
+                  <x-jet-nav-link href="{{ route('type_tickets.index') }}" :active="request()->routeIs('type_tickets')">
                       {{ __('Типы билетов') }}
                   </x-jet-nav-link>
               </div>

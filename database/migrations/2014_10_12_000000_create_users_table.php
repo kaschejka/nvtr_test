@@ -25,6 +25,15 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('role')->nullable();
         });
+
+        DB::table('users')->insert(
+     array(
+         'email' => 'admin@admin',
+         'name' => 'admin',
+         'role' => 'admin',
+         'password' => Hash::make('123456789')
+     )
+ );
     }
 
     /**
@@ -36,4 +45,5 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
+
 }
